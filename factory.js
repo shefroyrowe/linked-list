@@ -36,9 +36,36 @@ class LinkedList {
     }
     remove() {
         if (this.tail) {
-            // code omitted ... 
+            this.length--;
+            const tailNode = this.tail;
+            
+            // search for the node before tail
+            let currentNode = this.head;
+            // the while loop stops when the node next
+            while (currentNode.next != tailNode) {
+                currentNode = currentNode.next;
+            }
+
+            const beforeTail = currentNode;
+            this.tail = beforeTail;
+            this.tail.next = null;
+
+            return tailNode;
         }
         return undefined;
+    }
+    insertHead(value) {
+        this.length++;
+        let newNode = CreateNode(value);
+
+        if (this.head) {
+            newNode.next = this.head;
+            this.head = newNode;
+            return newNode;
+        }
+
+        this.head = this.tail = newNode;
+        return newNode;
     }
 }
 
