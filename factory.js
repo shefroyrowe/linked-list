@@ -27,5 +27,25 @@ class LinkedList {
         this.head = this.tail = newNode;
         return newNode;
     }
+    print() {
+        let current = this.head;
+        while (current) {
+            console.log(current.value);
+            current = current.next;
+        }
+    }
+    remove() {
+        if (this.tail) {
+            // code omitted ... 
+        }
+        return undefined;
+    }
 }
+
+const linkedList = new LinkedList();
+
+linkedList.insert(7);
+linkedList.insert(true);
+linkedList.insert(20);
+linkedList.print() // 7 true 20
 
