@@ -67,6 +67,23 @@ class LinkedList {
         this.head = this.tail = newNode;
         return newNode;
     }
+    removeHead() {
+        if (this.head) {
+            this.length--;
+            const removedNode = this.head;
+            this.head = this.head.ext;
+            return removedNode;
+        }
+        return undefined;
+    }
+    insertIndex(value, index) {
+        if (index >= this.length) {
+            throw new Error('Insert index out of bounds');
+        }
+        if (index === 0) {
+            return this.insertHead(value);
+        }
+    }
 }
 
 const linkedList = new LinkedList();
