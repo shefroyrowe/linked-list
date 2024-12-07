@@ -138,13 +138,15 @@ class LinkedList {
     }
 }
 
-const linkedList = new LinkedList();
+const list = new LinkedList();
 
-linkedList.insert(7);
-linkedList.insert(8);
-linkedList.insert(9);
-linkedList.insert(10);
-linkedList.removeIndex(2); // remove 9
-console.log(linkedList.length); // 3
-linkedList.print(); // 7 8 10
+list.insert("dog");
+list.insert("cat");
+list.insert("parrot");
+list.insert("hamster");
+list.insert("snake");
+list.insert("turtle");
+
+console.log('list length:', list.length); // 3
+list.print(); 
 
